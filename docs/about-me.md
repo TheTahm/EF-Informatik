@@ -7,4 +7,4 @@
 
 **Favorite Food**: Sushi
 
-**Favorite Animal**: Racoon
+**Favorite Animal**: Racoo
