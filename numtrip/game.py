@@ -1,12 +1,19 @@
-[16:36] Arnaschus Linus, GBSL Schueler
-zeilen = 10
-matrix = [
-  [2,3,2,6,5],[6,2,5,7,4],[3,9,5,2,0],[0,6,1,3,4],[2,4,6,8,2]
+board = [
+    [2, 4, 1, 8, 8],
+    [4, 2, 8, 2, 1],
+    [4, 4, 8, 4, 2],
+    [2, 8, 1, 4, 1],
+    [2, 4, 4, 4, 4]
 ]
-def pprint(mat2d):
-     for zeile in mat2d:
-     print(zeile)
 
-pprint (matrix)
+for zeile in board:
+    for zelle in zeile:
+        print(' -', end='') # Das es keinen abstand macht
+    print(' ')
+    for zelle in zeile:
+        print(f'|{zelle}', end='') #f steht für das Format, dass man nicht mit + arbeiten muss.
+    print('|')
 
-print("+-----+------+------+-----+-----+-----+\n"  "I    I     I      I    I    I     I")
+for zelle in board[0]:
+    print(' -', end='')
+print(' ')
