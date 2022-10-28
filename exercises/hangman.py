@@ -31,9 +31,13 @@ def auswerten(valid_inp):
         falsch_geraten.append(valid_inp)
 
 def gewonnen():
-        return True
+    for buchstabe in gesucht:
+        if buchstabe not in gefunden:
+            return False
+    return True
 def game_over():
-    return False
+    if len(falsch_geraten)>15:
+        return True
 
 def play():
     while not game_over():
@@ -43,7 +47,6 @@ def play():
     if gewonnen():
         print("gewonnen")
     else:
-     print("verloren"+gesucht())
+     print("verloren")
 
 play()
-
