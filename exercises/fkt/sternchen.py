@@ -1,4 +1,5 @@
-
+a= 10
+b= 5
 
 def horizontal(zahl):
     for i in range(zahl):
@@ -14,4 +15,4 @@ def rechteck(zahl,zahl_2):
     vertikal(zahl,zahl_2)
     horizontal(zahl)
 
-rechteck(10, 5)
+rechteck( a ,b)
