@@ -1,5 +1,5 @@
 # Profile Noah
-![](/docs/images/VwAcePXhIeFrBXo-1600x900-noPad.jpg)
+![](images/VwAcePXhIeFrBXo-1600x900-noPad.jpg)
 
 **Hobby**: American Football
 
