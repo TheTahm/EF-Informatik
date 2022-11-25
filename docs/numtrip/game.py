@@ -26,3 +26,21 @@ def Spielfeld():
         
     print(' ')
 Spielfeld()
+
+def Zeilenauswahl(raw):
+    raw=raw.strip()
+    try:
+        zahl = int(raw)
+        if zahl<10:
+            raise ("Zahl zu gross!")
+        return [zahl]
+    except:
+        return False
+
+Auswahl=input("Welche Zeile?")
+
+Zeilenauswahl(Auswahl)
+print 
+        
+
+#Spaltenauswahl=input("Welche Spalte?")
