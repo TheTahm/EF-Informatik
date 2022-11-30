@@ -1,12 +1,12 @@
 a=0
-def Spielfeld():
-    board = [
+board = [
         [2, 4, 1, 8, 8],
         [4, 2, 8, 2, 1],
         [4, 4, 8, 4, 2],
         [2, 8, 1, 4, 1],
         [2, 4, 4, 4, 4]
     ]
+def Spielfeld():
 
     for zeile in board:
         for zelle in zeile:
@@ -30,17 +30,33 @@ Spielfeld()
 def Zeilenauswahl(raw):
     raw=raw.strip()
     try:
-        zahl = int(raw)
-        if zahl<10:
+        Zeilenzahl = int(raw)
+        if Zeilenzahl>5:
             raise ("Zahl zu gross!")
-        return [zahl]
+        return int[Zeilenzahl]
     except:
         return False
 
-Auswahl=input("Welche Zeile?")
+def Spaltenauswahl(raw):
+    raw=raw.strip()
+    try:
+        Spaltenzahl = int(raw)
+        if Spaltenzahl>5:
+            raise ("Zahl zu gross!")
+        return int[Spaltenzahl]
+    except:
+        return False
 
-Zeilenauswahl(Auswahl)
-print 
-        
+Zauswahl=input("Welche Zeile?")
+Sauswahl=input("Welche Spalte?")
+
+#Zeilenauswahl(Zauswahl)
+#Spaltenauswahl(Sauswahl)
+
+Sauswahl=int(Sauswahl)
+Zauswahl=int(Zauswahl)
+board[Zauswahl][Sauswahl]= ' '
+print (board)
+Spielfeld()
 
 #Spaltenauswahl=input("Welche Spalte?")
