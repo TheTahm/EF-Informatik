@@ -6,26 +6,33 @@ board = [
         [2, 8, 1, 4, 1],
         [2, 4, 4, 4, 4]
     ]
-def Spielfeld():
-
+def spielfeld():
+    #Zahlen oben = x
+    x = 0
+    y = 0
+    print ('  ', end='')
+    for i in board:
+        x = x+1
+        print (' ', x, end='')
+    print (' ')
+    print ('  ', end='')
+    #Zahlen seite = y
     for zeile in board:
         for zelle in zeile:
-            print(' -', end='') # Das es keinen abstand macht
-        print(' ')
+            print(' --', end='')
+        print(' ',)
+        print (' ', end='')
+        y = y+1
+        print (y, end='')
         for zelle in zeile:
-            print(f'|{zelle}', end='') #f steht für das Format, dass man nicht mit + arbeiten muss.
+            print(f'| {zelle}', end='')
         print('|')
-
+        print ('  ', end='')
     for zelle in board[0]:
-        print(' -', end='')
-    print(' ')      
-    for zelle in board[0]:
-        global a
-        a=a+1
-        print('',a, end='')
-        
+        print(' --', end='')
     print(' ')
-Spielfeld()
+
+spielfeld()
 
 def Feldauswahl():
     Zauswahl=input("Welche Zeile?")
@@ -36,7 +43,7 @@ def Feldauswahl():
         Zauswahl<=5
         Sauswahl<=5
         board[Zauswahl-1][Sauswahl-1]= ' '
-        Spielfeld()
+        spielfeld()
     except:
         if Sauswahl.isnumeric():
             print ("Spaltenzahl zu gorss!")
