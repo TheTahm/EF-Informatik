@@ -45,15 +45,8 @@ def Feldauswahl():
         board[Zauswahl-1][Sauswahl-1]= ' '
         spielfeld()
     except:
-        if Sauswahl.isnumeric():
-            print ("Spaltenzahl zu gorss!")
-        else:
-            print ("Das ist keine Zahl")
-        if Zauswahl.isnumeric():
-            print ("Zeilenzahl zu gorss!")
-        else:
-            print ("Das ist keine Zahl")
-        return False
+        print("Ungültige Eingabe!")
+        Feldauswahl()
 
 Feldauswahl()
 
