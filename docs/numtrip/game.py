@@ -50,12 +50,12 @@ def Spaltenauswahl(raw):
 Zauswahl=input("Welche Zeile?")
 Sauswahl=input("Welche Spalte?")
 
-#Zeilenauswahl(Zauswahl)
-#Spaltenauswahl(Sauswahl)
+Zeilenauswahl(Zauswahl)
+Spaltenauswahl(Sauswahl)
 
 Sauswahl=int(Sauswahl)
 Zauswahl=int(Zauswahl)
-board[Zauswahl][Sauswahl]= ' '
+board[Zauswahl-1][Sauswahl-1]= ' '
 print (board)
 Spielfeld()
 
