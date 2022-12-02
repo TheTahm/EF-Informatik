@@ -27,36 +27,27 @@ def Spielfeld():
     print(' ')
 Spielfeld()
 
-def Zeilenauswahl(raw):
-    raw=raw.strip()
+def Feldauswahl():
+    Zauswahl=input("Welche Zeile?")
+    Sauswahl=input("Welche Spalte?")
     try:
-        Zeilenzahl = int(raw)
-        if Zeilenzahl>5:
-            raise ("Zahl zu gross!")
-        return int[Zeilenzahl]
+        Sauswahl=int(Sauswahl)
+        Zauswahl=int(Zauswahl)
+        Zauswahl<=5
+        Sauswahl<=5
+        board[Zauswahl-1][Sauswahl-1]= ' '
+        Spielfeld()
     except:
+        if Sauswahl.isnumeric():
+            print ("Spaltenzahl zu gorss!")
+        else:
+            print ("Das ist keine Zahl")
+        if Zauswahl.isnumeric():
+            print ("Zeilenzahl zu gorss!")
+        else:
+            print ("Das ist keine Zahl")
         return False
 
-def Spaltenauswahl(raw):
-    raw=raw.strip()
-    try:
-        Spaltenzahl = int(raw)
-        if Spaltenzahl>5:
-            raise ("Zahl zu gross!")
-        return int[Spaltenzahl]
-    except:
-        return False
-
-Zauswahl=input("Welche Zeile?")
-Sauswahl=input("Welche Spalte?")
-
-Zeilenauswahl(Zauswahl)
-Spaltenauswahl(Sauswahl)
-
-Sauswahl=int(Sauswahl)
-Zauswahl=int(Zauswahl)
-board[Zauswahl-1][Sauswahl-1]= ' '
-print (board)
-Spielfeld()
+Feldauswahl()
 
 #Spaltenauswahl=input("Welche Spalte?")
