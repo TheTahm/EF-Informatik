@@ -45,7 +45,7 @@ def Feldauswahl():
         Zauswahl<=5
         Sauswahl<=5
         flood_fill(Zauswahl,Sauswahl,board[Zauswahl-1][Sauswahl-1],' ')
-        board[Zauswahl-1][Sauswahl-1]= ' '
+        #board[Zauswahl-1][Sauswahl-1]= ' '
         spielfeld()
     except:
         print("Ungültige Eingabe!")
@@ -63,6 +63,16 @@ def flood_fill(x ,y, old, new):
     flood_fill(x-1, y, old, new)
     flood_fill(x, y+1, old, new)
     flood_fill(x, y-1, old, new)
+'''def fill4(x, y, alteFarbe, neueFarbe):
+    board.push(x, y)
+    while board.isNotEmpty():
+        (x, y) = board.pop()
+        if Feldauswahl(x, y) == alteFarbe:
+            Feldauswahl(x, y, neueFarbe)
+            board.push(x, y + 1)
+            board.push(x, y - 1)
+            board.push(x + 1, y)
+            board.push(x - 1, y)'''
 
 Feldauswahl()
 #Spaltenauswahl=input("Welche Spalte?")
