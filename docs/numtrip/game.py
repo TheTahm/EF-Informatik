@@ -35,6 +35,7 @@ def spielfeld():
 spielfeld()
 Zauswahl=input("Welche Zeile?")
 Sauswahl=input("Welche Spalte?")
+wert = board[Sauswahl][Zauswahl]
 
 def Feldauswahl():
     global Zauswahl
@@ -42,11 +43,14 @@ def Feldauswahl():
     try:
         Sauswahl=int(Sauswahl)
         Zauswahl=int(Zauswahl)
-        Zauswahl<=5
-        Sauswahl<=5
+        if not Zauswahl<=5:
+            raise 'neee nicht mit mir'
+        if not Sauswahl<=5:
+            raise
         Sauswahl=Sauswahl-1
         Zauswahl=Zauswahl-1
         flood_fill(Sauswahl,Zauswahl,board[Zauswahl][Sauswahl],' ')
+        fill(Sauswahl,Zauswahl,)
         spielfeld()
     except:
         print("Ungültige Eingabe!")
@@ -64,5 +68,13 @@ def flood_fill(x ,y, old, new):
     flood_fill(x-1, y, old, new)
     flood_fill(x, y+1, old, new)
     flood_fill(x, y-1, old, new)
+
+def fill(x,y,old):
+    if x < 0 or x >= len(board[0]) or y < 0 or y >= len(board):
+        return
+    if board[y][x] != old:
+        return
+    board[y][x] = old*2
+
 
 Feldauswahl()
