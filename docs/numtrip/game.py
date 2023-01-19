@@ -81,9 +81,9 @@ def Feldauswahl():
 def flood_fill(x ,y, old, new):
     if x < 0 or x >= len(board[0]) or y < 0 or y >= len(board):
         return
-    if board[y][x] != old:
+    if board[x][y] != old:
         return
-    board[y][x] = new
+    board[x][y] = new
     flood_fill(x+1, y, old, new)
     flood_fill(x-1, y, old, new)
     flood_fill(x, y+1, old, new)
@@ -102,3 +102,5 @@ while True:
     Sauswahl=input("Welche Spalte 1-5?")
     Zauswahl=Züberprüfen(Zauswahl)
     Sauswahl=Süberprüfen(Sauswahl)
+    flood_fill(Zauswahl,Sauswahl,board[Zauswahl][Sauswahl],' ')
+    spielfeld()
