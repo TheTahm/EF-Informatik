@@ -93,6 +93,22 @@ def fill(c, d, e):
 
         c = 4
 
+def Auffüllen(a,b):
+    for i in range(20):
+        if b>=5:
+            b=0
+        Zeilen=4
+        for i in range (4):
+            if (board[a][b])==' ':
+                a=a-1
+                board[Zeilen][b]=board[a][b]
+                board[a][b]=' '
+            Zeilen=Zeilen-1
+            a=Zeilen
+        if board[a][b]==' ':
+            board[a][b] = random.choice(numbers)
+        b=b+1
+        a=4
 
 while True:
     Zauswahl=input("Welche Zeile 1-5?")
@@ -109,5 +125,6 @@ while True:
         board[Zauswahl][Sauswahl] = Wert*2
     else:
         board[Zauswahl][Sauswahl] = Wert
+    Auffüllen(Zeile,Spalte)
         
     spielfeld()
