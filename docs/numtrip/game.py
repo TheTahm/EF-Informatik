@@ -1,4 +1,8 @@
-a=0
+import random
+
+random.seed(2)
+
+numbers = [2, 4, 8]
 board = [
         [2, 4, 1, 8, 8],
         [4, 2, 8, 2, 1],
