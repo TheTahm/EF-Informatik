@@ -47,7 +47,7 @@ def Süberprüfen(S):
     except:
         print ('Fehlerhafte Eingabe')
         zahl = input('Welches Spalte 1-5?')
-        zahl = Züberprüfen(zahl)
+        zahl = Süberprüfen(zahl)
 
 def Züberprüfen(Z):
     try:
