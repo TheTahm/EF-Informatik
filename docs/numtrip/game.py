@@ -33,9 +33,29 @@ def spielfeld():
     print(' ')
 
 spielfeld()
-Zauswahl=input("Welche Zeile?")
-Sauswahl=input("Welche Spalte?")
-wert = board[Sauswahl][Zauswahl]
+def Süberprüfen(S):
+    try:
+        zahl = int(S)
+        zahl = zahl -1
+        if zahl > 5:
+            raise
+        return zahl
+    except:
+        print ('Fehlerhafte Eingabe')
+        zahl = input('Welches Spalte 1-5?')
+        zahl = Züberprüfen(zahl)
+
+def Züberprüfen(Z):
+    try:
+        zahl = int(Z)
+        zahl = zahl -1
+        if zahl > 5:
+            raise
+        return zahl
+    except:
+        print ('Fehlerhafte Eingabe')
+        zahl = input('Welches Zeile 1-5?')
+        zahl = Züberprüfen(zahl)
 
 def Feldauswahl():
     global Zauswahl
@@ -77,4 +97,8 @@ def fill(x,y,old):
     board[y][x] = old*2
 
 
-Feldauswahl()
+while True:
+    Zauswahl=input("Welche Zeile 1-5?")
+    Sauswahl=input("Welche Spalte 1-5?")
+    Zauswahl=Züberprüfen(Zauswahl)
+    Sauswahl=Süberprüfen(Sauswahl)
