@@ -61,26 +61,6 @@ def Züberprüfen(Z):
         zahl = input('Welches Zeile 1-5?')
         zahl = Züberprüfen(zahl)
 
-def Feldauswahl():
-    global Zauswahl
-    global Sauswahl
-    try:
-        Sauswahl=int(Sauswahl)
-        Zauswahl=int(Zauswahl)
-        if not Zauswahl<=5:
-            raise 'neee nicht mit mir'
-        if not Sauswahl<=5:
-            raise
-        Sauswahl=Sauswahl-1
-        Zauswahl=Zauswahl-1
-        flood_fill(Sauswahl,Zauswahl,board[Zauswahl][Sauswahl],' ')
-        spielfeld()
-    except:
-        print("Ungültige Eingabe!")
-        Zauswahl=input("Welche Zeile?")
-        Sauswahl=input("Welche Spalte?")
-        Feldauswahl()
-
 def flood_fill(x ,y, old, new):
     if x < 0 or x >= len(board[0]) or y < 0 or y >= len(board):
         return
