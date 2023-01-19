@@ -4,7 +4,7 @@ random.seed(2)
 
 numbers = [2, 4, 8]
 board = [
-        [2, 4, 1, 8, 8],
+        [1024, 4, 1, 8, 8],
         [4, 2, 8, 2, 1],
         [4, 4, 8, 4, 2],
         [2, 8, 1, 4, 1],
@@ -126,5 +126,13 @@ while True:
     else:
         board[Zauswahl][Sauswahl] = Wert
     Auffüllen(Zeile,Spalte)
-        
+    y=0
+    x=0
+    for i in range(5):
+        for i in range(5):
+            if board[x][y]!=1024:
+                False
+            x=x+1
+        y=y+1
+        x=0
     spielfeld()
