@@ -70,7 +70,6 @@ def Feldauswahl():
         Sauswahl=Sauswahl-1
         Zauswahl=Zauswahl-1
         flood_fill(Sauswahl,Zauswahl,board[Zauswahl][Sauswahl],' ')
-        fill(Sauswahl,Zauswahl,)
         spielfeld()
     except:
         print("Ungültige Eingabe!")
@@ -89,12 +88,26 @@ def flood_fill(x ,y, old, new):
     flood_fill(x, y+1, old, new)
     flood_fill(x, y-1, old, new)
 
-def fill(x,y,old):
-    if x < 0 or x >= len(board[0]) or y < 0 or y >= len(board):
-        return
-    if board[y][x] != old:
-        return
-    board[y][x] = old*2
+def fill(c, d, e):
+    global Feld
+    for i in range(4):
+        if d >= 5:
+
+            return
+
+        for i in range(4):
+
+            if (board[c][d]) == ' ':
+
+                e = e+1
+
+                Feld = e
+
+            c = c-1
+
+        d = d+1
+
+        c = 4
 
 
 while True:
@@ -102,5 +115,15 @@ while True:
     Sauswahl=input("Welche Spalte 1-5?")
     Zauswahl=Züberprüfen(Zauswahl)
     Sauswahl=Süberprüfen(Sauswahl)
+    Wert=board[Zauswahl][Sauswahl]
     flood_fill(Zauswahl,Sauswahl,board[Zauswahl][Sauswahl],' ')
+    Spalte=0
+    Zeile=4
+    Feld=0
+    fill(Zeile,Spalte,Feld)
+    if Feld > 1:
+        board[Zauswahl][Sauswahl] = Wert*2
+    else:
+        board[Zauswahl][Sauswahl] = Wert
+        
     spielfeld()
