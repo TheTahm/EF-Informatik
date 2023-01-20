@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>Lern Blog Blog</title>
-        <link>https://TheTham.github.io/EF-Informatik/</link>
+        <link>https://TheTahm.github.io/EF-Informatik/</link>
         <description>Lern Blog Blog</description>
-        <lastBuildDate>Thu, 19 Jan 2023 19:58:15 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 20 Jan 2023 16:37:53 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>de</language>
         <item>
             <title><![CDATA[Datenstruktur]]></title>
-            <link>https://TheTham.github.io/EF-Informatik/Datenstruktur</link>
+            <link>https://TheTahm.github.io/EF-Informatik/Datenstruktur</link>
             <guid>/Datenstruktur</guid>
-            <pubDate>Thu, 19 Jan 2023 19:58:15 GMT</pubDate>
+            <pubDate>Fri, 20 Jan 2023 16:37:53 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Numntrip]]></title>
-            <link>https://TheTham.github.io/EF-Informatik/2022/12/02/blog</link>
+            <link>https://TheTahm.github.io/EF-Informatik/2022/12/02/blog</link>
             <guid>/2022/12/02/blog</guid>
             <pubDate>Fri, 02 Dec 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[Ich habe meine Seele verloren.]]></description>
@@ -24,7 +24,7 @@
         </item>
         <item>
             <title><![CDATA[Wiedereinstieg in Phyton]]></title>
-            <link>https://TheTham.github.io/EF-Informatik/2022/08/26/blog</link>
+            <link>https://TheTahm.github.io/EF-Informatik/2022/08/26/blog</link>
             <guid>/2022/08/26/blog</guid>
             <pubDate>Fri, 26 Aug 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[Es hat sehr viel spass gemacht wieder einmal mit Phyton zu arbeiten. Die grössten probleme hatten wir mit Aufgabe 1.]]></description>
