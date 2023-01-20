@@ -4,7 +4,7 @@ random.seed(2)
 
 numbers = [2, 4, 8]
 board = [
-        [1024, 4, 1, 8, 8],
+        [512, 512, 1, 8, 8],
         [4, 2, 8, 2, 1],
         [4, 4, 8, 4, 2],
         [2, 8, 1, 4, 1],
@@ -40,15 +40,15 @@ spielfeld()
 def Süberprüfen(frage):
     valid=True
     while valid:
-    try:
-        zahl=input(frage)
-        zahl = int(zahl)
-        zahl = zahl -1
+        try:
+            zahl=input(frage)
+            zahl = int(zahl)
+            zahl = zahl -1
             if zahl<-1 or zahl > 5:
-            raise
-        return zahl
-    except:
-        print ('Fehlerhafte Eingabe')
+                raise
+            return zahl
+        except:
+            print ('Fehlerhafte Eingabe')
 
 
 def Züberprüfen(frage):
@@ -112,8 +112,16 @@ def Auffüllen(a,b):
             board[a][b] = random.choice(numbers)
         b=b+1
         a=4
+def win():
+    global not_game_over
+    for y in range(5):
+        for x in range(5):
+            if board[x][y]==1024:
+                not_game_over=False
 not_game_over=True
+x=0
 while not_game_over:
+    x=x+1
     Zauswahl=Züberprüfen("Welche Zeile 1-5?")
     Sauswahl=Süberprüfen("Welche Spalte 1-5?")
     Wert=board[Zauswahl][Sauswahl]
@@ -127,11 +135,8 @@ while not_game_over:
     else:
         board[Zauswahl][Sauswahl] = Wert
     Auffüllen(Zeile,Spalte)
-
-    for y in range(5):
-        for x in range(5):
-            if board[x][y]==1024:
-                not_game_over=False
-           
+    win()
     spielfeld()
+
+print("Sie haben in",(x),"Zügen gewonnen!")
 exit(0)
