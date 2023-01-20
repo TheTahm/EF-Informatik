@@ -3,7 +3,7 @@
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
-const USERNAME = 'TheTham';
+const USERNAME = 'TheTahm';
 const REPO_NAME = 'EF-Informatik';
 
 /** @type {import('@docusaurus/types').Config} */
