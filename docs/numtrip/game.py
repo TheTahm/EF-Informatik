@@ -38,11 +38,13 @@ def spielfeld():
 
 spielfeld()
 def Süberprüfen(frage):
+    valid=True
+    while valid:
     try:
         zahl=input(frage)
         zahl = int(zahl)
         zahl = zahl -1
-        if zahl<=0 or zahl > 5:
+            if zahl<-1 or zahl > 5:
             raise
         return zahl
     except:
@@ -56,7 +58,7 @@ def Züberprüfen(frage):
             zahl=input(frage)
             zahl = int(zahl)
             zahl = zahl -1
-            if zahl<=0 or zahl > 5:
+            if zahl<-1 or zahl > 5:
                 raise
             return zahl
         except:
