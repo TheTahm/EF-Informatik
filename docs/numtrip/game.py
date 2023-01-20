@@ -109,8 +109,8 @@ def Auffüllen(a,b):
             board[a][b] = random.choice(numbers)
         b=b+1
         a=4
-
-while True:
+not_game_over=True
+while not_game_over:
     Zauswahl=input("Welche Zeile 1-5?")
     Sauswahl=input("Welche Spalte 1-5?")
     Zauswahl=Züberprüfen(Zauswahl)
@@ -126,13 +126,11 @@ while True:
     else:
         board[Zauswahl][Sauswahl] = Wert
     Auffüllen(Zeile,Spalte)
-    y=0
-    x=0
-    for i in range(5):
-        for i in range(5):
-            if board[x][y]!=1024:
-                False
-            x=x+1
-        y=y+1
-        x=0
+
+    for y in range(5):
+        for x in range(5):
+            if board[x][y]==1024:
+                not_game_over=False
+           
     spielfeld()
+exit(0)
