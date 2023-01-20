@@ -41,13 +41,15 @@ def Süberprüfen(S):
     try:
         zahl = int(S)
         zahl = zahl -1
-        if zahl > 5:
+        if zahl<=0 or zahl > 5:
             raise
         return zahl
     except:
         print ('Fehlerhafte Eingabe')
         zahl = input('Welches Spalte 1-5?')
         zahl = Süberprüfen(zahl)
+        return zahl
+
 
 def Züberprüfen(Z):
     try:
@@ -60,7 +62,7 @@ def Züberprüfen(Z):
         print ('Fehlerhafte Eingabe')
         zahl = input('Welches Zeile 1-5?')
         zahl = Züberprüfen(zahl)
-
+        return zahl
 def flood_fill(x ,y, old, new):
     if x < 0 or x >= len(board[0]) or y < 0 or y >= len(board):
         return
