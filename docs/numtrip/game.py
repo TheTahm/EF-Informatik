@@ -37,32 +37,31 @@ def spielfeld():
     print(' ')
 
 spielfeld()
-def Süberprüfen(S):
+def Süberprüfen(frage):
     try:
-        zahl = int(S)
+        zahl=input(frage)
+        zahl = int(zahl)
         zahl = zahl -1
         if zahl<=0 or zahl > 5:
             raise
         return zahl
     except:
         print ('Fehlerhafte Eingabe')
-        zahl = input('Welches Spalte 1-5?')
-        zahl = Süberprüfen(zahl)
-        return zahl
 
 
-def Züberprüfen(Z):
-    try:
-        zahl = int(Z)
-        zahl = zahl -1
-        if zahl > 5:
-            raise
-        return zahl
-    except:
-        print ('Fehlerhafte Eingabe')
-        zahl = input('Welches Zeile 1-5?')
-        zahl = Züberprüfen(zahl)
-        return zahl
+def Züberprüfen(frage):
+    valid=True
+    while valid:
+        try:
+            zahl=input(frage)
+            zahl = int(zahl)
+            zahl = zahl -1
+            if zahl<=0 or zahl > 5:
+                raise
+            return zahl
+        except:
+            print ('Fehlerhafte Eingabe')
+
 def flood_fill(x ,y, old, new):
     if x < 0 or x >= len(board[0]) or y < 0 or y >= len(board):
         return
@@ -113,10 +112,8 @@ def Auffüllen(a,b):
         a=4
 not_game_over=True
 while not_game_over:
-    Zauswahl=input("Welche Zeile 1-5?")
-    Sauswahl=input("Welche Spalte 1-5?")
-    Zauswahl=Züberprüfen(Zauswahl)
-    Sauswahl=Süberprüfen(Sauswahl)
+    Zauswahl=Züberprüfen("Welche Zeile 1-5?")
+    Sauswahl=Süberprüfen("Welche Spalte 1-5?")
     Wert=board[Zauswahl][Sauswahl]
     flood_fill(Zauswahl,Sauswahl,board[Zauswahl][Sauswahl],' ')
     Spalte=0
