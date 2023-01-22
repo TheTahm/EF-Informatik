@@ -117,10 +117,11 @@ def win():
         for x in range(5):
             if board[x][y]==1024:
                 not_game_over=False
-not_game_over=True
-x=0
+
+def play(x):
 while not_game_over:
     x=x+1
+        print (f'Spielzug {x}')
     Zauswahl=Züberprüfen("Welche Zeile 1-5?")
     Sauswahl=Süberprüfen("Welche Spalte 1-5?")
     Wert=board[Zauswahl][Sauswahl]
