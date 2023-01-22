@@ -136,25 +136,33 @@ def loose():
                     z=z+1
             else:
                 z=z+1
-            if board[x-1][y]!=board[x][y]:
+            if x!=0:
+                if board[x-1][y]!=board[x][y]:
+                    z=z+1
+            else:
                 z=z+1
             if y!=4:
                 if board[x][y+1]!=board[x][y]:
                     z=z+1
             else:
                 z=z+1
-            if board[x][y-1]!=board[x][y]:
+            if y!=0:
+                if board[x][y-1]!=board[x][y]:
+                    z=z+1
+            else:
                 z=z+1
             if z==4:
                 a=a+1
     if a==25:
         print (f'Sie haben in {o} Zügen veloren!')
         not_game_over=False
+    return
 
 not_game_over=True
 o=0
 while not_game_over:
     o=o+1
+    loose()
     print (f'Spielzug {o}')
     Zauswahl=Züberprüfen("Welche Zeile 1-5?")
     Sauswahl=Süberprüfen("Welche Spalte 1-5?")
@@ -170,7 +178,6 @@ while not_game_over:
         board[Zauswahl][Sauswahl] = Wert
     Auffüllen(Zeile,Spalte)
     win()
-    loose()
     spielfeld()
 
 exit(0)
