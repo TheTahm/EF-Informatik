@@ -4,8 +4,8 @@ random.seed(2)
 
 numbers = [2, 4, 8]
 board = [
-        [512, 512, 1, 8, 8],
-        [4, 2, 8, 2, 1],
+        [2, 128, 128, 8, 8],
+        [4, 2, 128, 2, 1],
         [4, 4, 8, 4, 2],
         [2, 8, 1, 4, 1],
         [2, 4, 4, 4, 4]
@@ -50,7 +50,6 @@ def Süberprüfen(frage):
         except:
             print ('Fehlerhafte Eingabe')
 
-
 def Züberprüfen(frage):
     valid=True
     while valid:
@@ -59,7 +58,7 @@ def Züberprüfen(frage):
             zahl = int(zahl)
             zahl = zahl -1
             if zahl<-1 or zahl > 5:
-                raise
+                raise 
             return zahl
         except:
             print ('Fehlerhafte Eingabe')
@@ -77,12 +76,12 @@ def flood_fill(x ,y, old, new):
 
 def fill(c, d, e):
     global Feld
-    for i in range(4):
+    for i in range(5):
         if d >= 5:
 
             return
 
-        for i in range(4):
+        for i in range(5):
 
             if (board[c][d]) == ' ':
 
@@ -97,11 +96,11 @@ def fill(c, d, e):
         c = 4
 
 def Auffüllen(a,b):
-    for i in range(20):
+    for i in range(25):
         if b>=5:
             b=0
         Zeilen=4
-        for i in range (4):
+        for i in range (5):
             if (board[a][b])==' ':
                 a=a-1
                 board[Zeilen][b]=board[a][b]
@@ -140,3 +139,9 @@ while not_game_over:
 
 print("Sie haben in",(x),"Zügen gewonnen!")
 exit(0)
+
+'''
+    Spiel verloren
+    nochmal spielen 
+    Abstände klären
+    '''
