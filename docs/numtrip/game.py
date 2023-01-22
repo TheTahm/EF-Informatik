@@ -1,15 +1,15 @@
 import random
-
 random.seed(2)
-
 numbers = [2, 4, 8]
+
 board = [
         [2, 128, 128, 8, 8],
-        [4, 2, 128, 2, 1],
+        [4, 2, 256, 2, 1],
         [4, 4, 8, 4, 2],
         [2, 8, 1, 4, 1],
         [2, 4, 4, 4, 4]
     ]
+    
 def spielfeld():
     #Zahlen oben = x
     x = 0
@@ -36,7 +36,6 @@ def spielfeld():
         print(' --', end='')
     print(' ')
 
-spielfeld()
 def Süberprüfen(frage):
     valid=True
     while valid:
@@ -111,36 +110,43 @@ def Auffüllen(a,b):
             board[a][b] = random.choice(numbers)
         b=b+1
         a=4
+        
 def win():
     global not_game_over
     for y in range(5):
         for x in range(5):
-            if board[x][y]==1024:
+            if board[x][y]==512:
                 not_game_over=False
 
 def play(x):
-while not_game_over:
-    x=x+1
+    while not_game_over:
+        x=x+1
         print (f'Spielzug {x}')
-    Zauswahl=Züberprüfen("Welche Zeile 1-5?")
-    Sauswahl=Süberprüfen("Welche Spalte 1-5?")
-    Wert=board[Zauswahl][Sauswahl]
-    flood_fill(Zauswahl,Sauswahl,board[Zauswahl][Sauswahl],' ')
-    Spalte=0
-    Zeile=4
-    Feld=0
-    fill(Zeile,Spalte,Feld)
-    if Feld > 1:
-        board[Zauswahl][Sauswahl] = Wert*2
-    else:
-        board[Zauswahl][Sauswahl] = Wert
-    Auffüllen(Zeile,Spalte)
-    win()
+        Zauswahl=Züberprüfen("Welche Zeile 1-5?")
+        Sauswahl=Süberprüfen("Welche Spalte 1-5?")
+        Wert=board[Zauswahl][Sauswahl]
+        flood_fill(Zauswahl,Sauswahl,board[Zauswahl][Sauswahl],' ')
+        Spalte=0
+        Zeile=4
+        Feld=0
+        fill(Zeile,Spalte,Feld)
+        if Feld > 1:
+            board[Zauswahl][Sauswahl] = Wert*2
+        else:
+            board[Zauswahl][Sauswahl] = Wert
+        Auffüllen(Zeile,Spalte)
+        win()
+        spielfeld()
+
+def Spiel():
+    x=0
     spielfeld()
+    play(x)
 
-print("Sie haben in",(x),"Zügen gewonnen!")
-exit(0)
+    print(f'Sie haben in {x} Zügen gewonnen!')
+    exit(0)
 
+Spiel()
 '''
     Spiel verloren
     nochmal spielen 
