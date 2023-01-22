@@ -4,11 +4,11 @@ random.seed(2)
 
 numbers = [2, 4, 8]
 board = [
-        [16, 128, 128, 8, 8],
+        [4, 128, 128, 8, 8],
         [4, 2, 128, 2, 1],
         [4, 4, 8, 4, 2],
-        [2, 8, 1, 4, 1],
-        [2, 4, 4, 4, 4]
+        [2, 8, 1, 8, 1],
+        [2, 4, 8, 8, 8]
     ]
 def spielfeld():
     #Zahlen oben = x
@@ -101,11 +101,11 @@ def fill(c, d, e):
         c = 4
 
 def Auffüllen(a,b):
-    for i in range(25):
+    for i in range(20):
         if b>=5:
             b=0
         Zeilen=4
-        for i in range (5):
+        for i in range (4):
             if (board[a][b])==' ':
                 a=a-1
                 board[Zeilen][b]=board[a][b]
