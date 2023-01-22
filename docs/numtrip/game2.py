@@ -7,8 +7,8 @@ board = [
         [4, 12, 128, 8, 86],
         [3, 2, 1, 2, 1],
         [1, 4, 56, 4, 2],
-        [12, 45, 1, 8, 6],
-        [32, 23, 87, 56, 98]
+        [12, 45, 8, 3, 6],
+        [32, 23, 87, 56, 6]
     ]
 def spielfeld():
     #Zahlen oben = x
@@ -128,21 +128,28 @@ def win():
 def loose():
     global not_game_over
     a=0
-    for y in range(4):
-        for x in range(4):
+    for y in range(5):
+        for x in range(5):
             z=0
-            if board[x+1][y]!=board[x][y]:
+            if x!=4:
+                if board[x+1][y]!=board[x][y]:
+                    z=z+1
+            else:
                 z=z+1
             if board[x-1][y]!=board[x][y]:
                 z=z+1
-            if board[x][y+1]!=board[x][y]:
+            if y!=4:
+                if board[x][y+1]!=board[x][y]:
+                    z=z+1
+            else:
                 z=z+1
             if board[x][y-1]!=board[x][y]:
                 z=z+1
             if z==4:
                 a=a+1
-    if a==16:
-        print("lost")
+    if a==25:
+        print (f'Sie haben in {o} Zügen veloren!')
+        not_game_over=False
 
 not_game_over=True
 o=0
