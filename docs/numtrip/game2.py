@@ -4,11 +4,11 @@ random.seed(2)
 
 numbers = [2, 4, 8]
 board = [
-        [4, 128, 128, 8, 8],
-        [4, 2, 128, 2, 1],
-        [4, 4, 8, 4, 2],
-        [2, 8, 1, 8, 1],
-        [2, 4, 8, 8, 8]
+        [4, 12, 128, 8, 86],
+        [3, 2, 1, 2, 1],
+        [1, 4, 56, 4, 2],
+        [12, 45, 1, 8, 6],
+        [32, 23, 87, 56, 98]
     ]
 def spielfeld():
     #Zahlen oben = x
@@ -122,11 +122,33 @@ def win():
     for y in range(5):
         for x in range(5):
             if board[x][y]==256:
+                print (f'Sie haben in {o} Zügen gewonnen!')
                 not_game_over=False
+
+def loose():
+    global not_game_over
+    a=0
+    for y in range(4):
+        for x in range(4):
+            z=0
+            if board[x+1][y]!=board[x][y]:
+                z=z+1
+            if board[x-1][y]!=board[x][y]:
+                z=z+1
+            if board[x][y+1]!=board[x][y]:
+                z=z+1
+            if board[x][y-1]!=board[x][y]:
+                z=z+1
+            if z==4:
+                a=a+1
+    if a==16:
+        print("lost")
+
 not_game_over=True
-x=0
+o=0
 while not_game_over:
-    x=x+1
+    o=o+1
+    print (f'Spielzug {o}')
     Zauswahl=Züberprüfen("Welche Zeile 1-5?")
     Sauswahl=Süberprüfen("Welche Spalte 1-5?")
     Wert=board[Zauswahl][Sauswahl]
@@ -141,13 +163,12 @@ while not_game_over:
         board[Zauswahl][Sauswahl] = Wert
     Auffüllen(Zeile,Spalte)
     win()
+    loose()
     spielfeld()
 
-print("Sie haben in",(x),"Zügen gewonnen!")
 exit(0)
 
 '''
     Spiel verloren
     nochmal spielen 
-    Abstände klären
     '''
