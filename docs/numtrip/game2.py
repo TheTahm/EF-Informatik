@@ -10,6 +10,19 @@ board = [
         [2, 8, 1, 4, 1],
         [2, 4, 4, 4, 4]
     ]
+
+def board_auffüllen():
+    global board
+    board = [
+        [random.choice(numbers),random.choice(numbers), random.choice(numbers), random.choice(numbers), random.choice(numbers)],
+        [random.choice(numbers),random.choice(numbers), random.choice(numbers), random.choice(numbers), random.choice(numbers)],
+        [random.choice(numbers),random.choice(numbers), random.choice(numbers), random.choice(numbers), random.choice(numbers)],
+        [random.choice(numbers),random.choice(numbers), random.choice(numbers), random.choice(numbers), random.choice(numbers)],
+        [random.choice(numbers),random.choice(numbers), random.choice(numbers), random.choice(numbers), random.choice(numbers)]
+    ]
+    print(board)
+
+
 def spielfeld():
     #Zahlen oben = x
     x = 0
@@ -159,7 +172,7 @@ def loose():
     if a==25:
         print (f'Sie haben in {o} Zügen veloren!')
         not_game_over=False
-    return
+        Wiederspielen("Wollen Sie noch einmal spielen (ja oder nein)?")
 
 def Wiederspielen(frage):
     global not_game_over
@@ -167,7 +180,7 @@ def Wiederspielen(frage):
     loop.lower
     if loop=="ja":
         not_game_over=True
-        #board_füllen()
+        board_auffüllen()
         spielfeld()
     elif loop=="nein":
         exit(0)
@@ -198,8 +211,3 @@ while not_game_over:
     loose()
 
 exit(0)
-
-'''
-    Spiel verloren
-    nochmal spielen 
-    '''
