@@ -3,13 +3,7 @@ import random
 random.seed(2)
 
 numbers = [2, 4, 8]
-board = [
-        [128, 128, 1, 8, 8],
-        [4, 2, 8, 2, 1],
-        [4, 4, 8, 4, 2],
-        [2, 8, 1, 4, 1],
-        [2, 4, 4, 4, 4]
-    ]
+board = []
 
 def board_auffüllen():
     global board
@@ -20,8 +14,6 @@ def board_auffüllen():
         [random.choice(numbers),random.choice(numbers), random.choice(numbers), random.choice(numbers), random.choice(numbers)],
         [random.choice(numbers),random.choice(numbers), random.choice(numbers), random.choice(numbers), random.choice(numbers)]
     ]
-    print(board)
-
 
 def spielfeld():
     #Zahlen oben = x
@@ -54,7 +46,6 @@ def spielfeld():
         print(' ---', end='')
     print(' ')
 
-spielfeld()
 def Süberprüfen(frage):
     valid=True
     while valid:
@@ -139,8 +130,6 @@ def win():
                 not_game_over=False
                 Wiederspielen("Wollen Sie noch einmal spielen (ja oder nein)?")
 
-                
-
 def loose():
     global not_game_over
     a=0
@@ -188,6 +177,8 @@ def Wiederspielen(frage):
         print("Falsche Eingabe")
         Wiederspielen("Wollen Sie noch einmal spielen (ja oder nein)?")
 
+board_auffüllen()
+spielfeld()
 not_game_over=True
 o=0
 while not_game_over:
