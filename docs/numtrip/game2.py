@@ -166,7 +166,7 @@ def loose():
 def Wiederspielen(frage):
     global not_game_over
     loop=input(frage)
-    loop.lower
+    loop=loop.lower()
     if loop=="ja":
         not_game_over=True
         board_auffüllen()
