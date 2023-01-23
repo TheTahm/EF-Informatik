@@ -4,11 +4,11 @@ random.seed(2)
 
 numbers = [2, 4, 8]
 board = [
-        [4, 12, 128, 8, 86],
-        [3, 2, 1, 2, 1],
-        [1, 4, 56, 4, 2],
-        [12, 45, 8, 3, 6],
-        [32, 23, 87, 56, 6]
+        [128, 128, 1, 8, 8],
+        [4, 2, 8, 2, 1],
+        [4, 4, 8, 4, 2],
+        [2, 8, 1, 4, 1],
+        [2, 4, 4, 4, 4]
     ]
 def spielfeld():
     #Zahlen oben = x
@@ -124,6 +124,9 @@ def win():
             if board[x][y]==256:
                 print (f'Sie haben in {o} Zügen gewonnen!')
                 not_game_over=False
+                Wiederspielen("Wollen Sie noch einmal spielen (ja oder nein)?")
+
+                
 
 def loose():
     global not_game_over
@@ -158,11 +161,24 @@ def loose():
         not_game_over=False
     return
 
+def Wiederspielen(frage):
+    global not_game_over
+    loop=input(frage)
+    loop.lower
+    if loop=="ja":
+        not_game_over=True
+        #board_füllen()
+        spielfeld()
+    elif loop=="nein":
+        exit(0)
+    else:
+        print("Falsche Eingabe")
+        Wiederspielen("Wollen Sie noch einmal spielen (ja oder nein)?")
+
 not_game_over=True
 o=0
 while not_game_over:
     o=o+1
-    loose()
     print (f'Spielzug {o}')
     Zauswahl=Züberprüfen("Welche Zeile 1-5?")
     Sauswahl=Süberprüfen("Welche Spalte 1-5?")
@@ -177,8 +193,9 @@ while not_game_over:
     else:
         board[Zauswahl][Sauswahl] = Wert
     Auffüllen(Zeile,Spalte)
-    win()
     spielfeld()
+    win()
+    loose()
 
 exit(0)
 
