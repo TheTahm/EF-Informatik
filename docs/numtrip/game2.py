@@ -103,11 +103,11 @@ def fill(c, d, e):
         c = 4
 
 def Auffüllen(a,b):
-    for i in range(20):
+    for i in range(25):
         if b>=5:
             b=0
         Zeilen=4
-        for i in range (4):
+        for i in range (5):
             if (board[a][b])==' ':
                 a=a-1
                 board[Zeilen][b]=board[a][b]
