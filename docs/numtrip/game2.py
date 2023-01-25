@@ -1,7 +1,5 @@
 import random
 
-random.seed(2)
-
 numbers = [2, 4, 8]
 board = []
 
@@ -53,7 +51,7 @@ def Süberprüfen(frage):
             zahl=input(frage)
             zahl = int(zahl)
             zahl = zahl -1
-            if zahl<-1 or zahl > 5:
+            if zahl<0 or zahl > 4:   #Warum Funktioniert 5 als Zahl bei <5?
                 raise
             return zahl
         except:
@@ -66,7 +64,7 @@ def Züberprüfen(frage):
             zahl=input(frage)
             zahl = int(zahl)
             zahl = zahl -1
-            if zahl<-1 or zahl > 5:
+            if zahl<0 or zahl > 4: #Warum Funktioniert 5 als Zahl bei <5?
                 raise 
             return zahl
         except:
