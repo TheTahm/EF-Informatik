@@ -167,6 +167,7 @@ def Wiederspielen(frage):
     global not_game_over
     loop=input(frage)
     loop=loop.lower()
+    loop=loop.strip()
     if loop=="ja":
         not_game_over=True
         board_auffüllen()
