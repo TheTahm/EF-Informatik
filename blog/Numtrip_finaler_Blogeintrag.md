@@ -47,6 +47,22 @@ def Süberprüfen(frage):
 # Umsetzung des Spieles
 ## Voraussetzungen fürs Spielen:
 
+Man muss sich das Programm Visual Studio Code herunterladen.
+
+Direkter Link zu Webseite zum downloaden: https://code.visualstudio.com/
+
+Dann muss man nur noch auf Github meinen Code kopieren gehen und au Visual Studio Code einfügen einfügen.
+
+Direkter Link zu meinem Numtrip Code auf Github:
+https://github.com/TheTahm/EF-Informatik/blob/main/docs/numtrip/game2.py
+
+## Top-down-Diagramm:
+
+*Finaler Top-down Entwurf*
+
+![](Blog_images\Top-down2.jpeg)
+
+
 ## Meine lose Definition:
 
 *Die lose Funktion war meine 2. letzte Hürde vor dem Abschluss des Spiels. Ich war sehr stolz als ich es endlich hinbekommen habe.*
