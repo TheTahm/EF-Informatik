@@ -120,15 +120,18 @@ def Auffüllen(a,b):
         a=4
 
 def win():
+    global o
     global not_game_over
     for y in range(5):
         for x in range(5):
             if board[x][y]==128:
                 print (f'Sie haben in {o} Zügen gewonnen!')
+                o=0
                 not_game_over=False
                 Wiederspielen("Wollen Sie noch einmal spielen (ja oder nein)?")
 
 def loose():
+    global o
     global not_game_over
     a=0
     for y in range(5):
@@ -158,6 +161,7 @@ def loose():
                 a=a+1
     if a==25:
         print (f'Sie haben in {o} Zügen veloren!')
+        o=0
         not_game_over=False
         Wiederspielen("Wollen Sie noch einmal spielen (ja oder nein)?")
 
