@@ -127,29 +127,29 @@ def lose():
         for x in range(5): # x ist die Spaltenzahl
             z=0         #z muss bei jedem neuen Feld 0 gesetzt werden
             if x!=4:
-                if board[x+1][y]!=board[x][y]:
+                if board[x+1][y]!=board[x][y]:     #Überprüft das Feld rechts davon
                     z=z+1
             else:
                 z=z+1
             if x!=0:
-                if board[x-1][y]!=board[x][y]:
+                if board[x-1][y]!=board[x][y]:     #Überprüft das Feld links davon
                     z=z+1
             else:
                 z=z+1
             if y!=4:
-                if board[x][y+1]!=board[x][y]:
+                if board[x][y+1]!=board[x][y]:     #Überprüft das Feld darunter
                     z=z+1
             else:
                 z=z+1
             if y!=0:
-                if board[x][y-1]!=board[x][y]:
+                if board[x][y-1]!=board[x][y]:     #Überprüft das Feld darüber
                     z=z+1
             else:
                 z=z+1
             if z==4:
                 a=a+1
     if a==25:
-        print (f'Sie haben in {o} Zügen veloren!') # printed die Anzahl Spielzüge aus
+        print (f'Sie haben in {o} Zügen veloren!') # printet die Anzahl Spielzüge aus
         o=0     # resettet den Spielzugzähler
         Wiederspielen("Wollen Sie noch einmal spielen (ja oder nein)?") #Nachdem man verloren hat kann man eine neue Runde anfangen oder aufhören
 
