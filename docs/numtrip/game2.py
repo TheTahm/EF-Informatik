@@ -123,12 +123,12 @@ def win():
                 Wiederspielen("Wollen Sie noch einmal spielen (ja oder nein)?")
 
 def lose():
-    global o
-    global not_game_over
+    global o            #globaler Spielzugzähler
+    global not_game_over #bedingun, dass das Spiel weiterläuft
     a=0
-    for y in range(5):
-        for x in range(5):
-            z=0
+    for y in range(5): # y ist die Zeilenzahl
+        for x in range(5): # x ist die Spaltenzahl
+            z=0         #z muss bei jedem neuen Feld 0 gesetzt werden
             if x!=4:
                 if board[x+1][y]!=board[x][y]:
                     z=z+1
@@ -152,10 +152,10 @@ def lose():
             if z==4:
                 a=a+1
     if a==25:
-        print (f'Sie haben in {o} Zügen veloren!')
-        o=0
+        print (f'Sie haben in {o} Zügen veloren!') # printed die Anzahl Spielzüge aus
+        o=0     # resettet den Spielzugzähler
         not_game_over=False
-        Wiederspielen("Wollen Sie noch einmal spielen (ja oder nein)?")
+        Wiederspielen("Wollen Sie noch einmal spielen (ja oder nein)?") #Nachdem man verloren hat kann man eine neue Runde anfangen oder aufhören
 
 def Wiederspielen(frage):
     global not_game_over
