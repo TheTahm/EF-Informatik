@@ -123,7 +123,7 @@ def win():
     global not_game_over
     for y in range(5):
         for x in range(5):
-            if board[x][y]==256:
+            if board[x][y]==128:
                 print (f'Sie haben in {o} Zügen gewonnen!')
                 not_game_over=False
                 Wiederspielen("Wollen Sie noch einmal spielen (ja oder nein)?")
