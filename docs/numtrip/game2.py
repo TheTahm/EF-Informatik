@@ -122,7 +122,7 @@ def win():
                 not_game_over=False
                 Wiederspielen("Wollen Sie noch einmal spielen (ja oder nein)?")
 
-def loose():
+def lose():
     global o
     global not_game_over
     a=0
@@ -194,6 +194,6 @@ while not_game_over:
     Auffüllen(Zeile,Spalte)
     spielfeld()
     win()
-    loose()
+    lose()
 
 exit(0)
