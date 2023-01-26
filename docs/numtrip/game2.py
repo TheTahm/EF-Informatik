@@ -85,21 +85,13 @@ def fill(c, d, e):
     global Feld
     for i in range(5):
         if d >= 5:
-
             return
-
         for i in range(5):
-
             if (board[c][d]) == ' ':
-
                 e = e+1
-
                 Feld = e
-
             c = c-1
-
         d = d+1
-
         c = 4
 
 def Auffüllen(a,b):
