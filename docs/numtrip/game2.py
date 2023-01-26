@@ -113,18 +113,15 @@ def Auffüllen(a,b):
 
 def win():
     global o
-    global not_game_over
     for y in range(5):
         for x in range(5):
             if board[x][y]==128:
                 print (f'Sie haben in {o} Zügen gewonnen!')
                 o=0
-                not_game_over=False
                 Wiederspielen("Wollen Sie noch einmal spielen (ja oder nein)?")
 
 def lose():
     global o            #globaler Spielzugzähler
-    global not_game_over #bedingun, dass das Spiel weiterläuft
     a=0
     for y in range(5): # y ist die Zeilenzahl
         for x in range(5): # x ist die Spaltenzahl
@@ -154,7 +151,6 @@ def lose():
     if a==25:
         print (f'Sie haben in {o} Zügen veloren!') # printed die Anzahl Spielzüge aus
         o=0     # resettet den Spielzugzähler
-        not_game_over=False
         Wiederspielen("Wollen Sie noch einmal spielen (ja oder nein)?") #Nachdem man verloren hat kann man eine neue Runde anfangen oder aufhören
 
 def Wiederspielen(frage):
