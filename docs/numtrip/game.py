@@ -163,13 +163,11 @@ def lose():
         o=0     # resettet den Spielzugzähler
         Wiederspielen("Wollen Sie noch einmal spielen (ja/nein)?") #Nachdem man verloren hat kann man eine neue Runde anfangen oder aufhören
 
-def Wiederspielen(frage):   # Ermöglicht es eine neue Runde anzufangen oder aufzuhören
-    global not_game_over    
+def Wiederspielen(frage):   # Ermöglicht es eine neue Runde anzufangen oder aufzuhören 
     loop=input(frage)       # fragt ob man weiterspielen will
     loop=loop.lower()       # ermöglicht es die antwort gross zu schreiben, und es wird trozdem gezählt
     loop=loop.strip()       # entfernt mögliche leerzeichen etc. vor und nam dem string
     if loop=="ja":      # falls man weiterspielen will, wird das board neu zufällig ausgefüllt und angezeigt
-        not_game_over=True
         board_auffüllen()
         spielfeld()
     elif loop=="nein": # falls nicht, hört der ganze code auf
