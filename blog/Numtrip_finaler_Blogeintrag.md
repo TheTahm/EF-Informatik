@@ -1,4 +1,4 @@
-# **Numtrip finaler Eintrag**
+# Numtrip finaler Eintrag
 
 
 # Ziel des Spiels
