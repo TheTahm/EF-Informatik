@@ -178,9 +178,20 @@ def Wiederspielen(frage):
         print("Falsche Eingabe")
         Wiederspielen("Wollen Sie noch einmal spielen (ja oder nein)?")
 
-board_auffüllen()
-spielfeld()
+def Spielen(frage):
+    loop=input(frage)
+    loop=loop.lower()
+    loop=loop.strip()
+    if loop=="ja":
+        board_auffüllen()
+        spielfeld()
+    elif loop=="nein":
+        exit(0)
+    else:
+        print("Falsche Eingabe")
+        Spielen("Wollen Sie noch einmal spielen (ja/nein)?")
 
+Spielen("Wollen Sie Spielen?(ja/nein)")
 not_game_over=True
 o=0
 while not_game_over:
