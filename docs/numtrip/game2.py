@@ -96,6 +96,12 @@ def fill():
         y = 4
     return e
 
+def Verdoppelung(Feld):
+    if Feld > 1:
+        board[Zauswahl][Sauswahl] = Wert*2
+    else:
+        board[Zauswahl][Sauswahl] = Wert
+
 def Auffüllen():
     x=0
     y=4
@@ -174,6 +180,7 @@ def Wiederspielen(frage):
 
 board_auffüllen()
 spielfeld()
+
 not_game_over=True
 o=0
 while not_game_over:
@@ -183,13 +190,7 @@ while not_game_over:
     Sauswahl=Süberprüfen("Welche Spalte 1-5?")
     Wert=board[Zauswahl][Sauswahl]
     flood_fill(Zauswahl,Sauswahl,board[Zauswahl][Sauswahl],' ')
-    Spalte=0
-    Zeile=4
-    Feld=fill()
-    if Feld > 1:
-        board[Zauswahl][Sauswahl] = Wert*2
-    else:
-        board[Zauswahl][Sauswahl] = Wert
+    Verdoppelung(fill())
     Auffüllen()
     spielfeld()
     win()
