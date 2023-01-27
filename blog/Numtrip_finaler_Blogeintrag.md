@@ -1,3 +1,6 @@
+# **Numtrip finaler Eintrag**
+
+
 # Ziel des Spiels
 
 Numtrip ist ein Denkspiel, mit dem Ziel Zahlen zu kombinieren, bis man die Zahl 128 erreicht. Dies erfolgt, in dem man auf dem Spielfeld einen bestimmten Punkt auswählen kann. Falls der Wert an diesem Punkt mit mindestens einem der anliegenden Feldern übereinstimmt, werden diese zussammen genommen und der Originalwert wird verdoppelt.
@@ -65,9 +68,9 @@ https://github.com/TheTahm/EF-Informatik/blob/main/docs/numtrip/game2.py
 
 ## Meine lose Definition:
 
-*Die lose Funktion war meine zweitletzte Hürde vor dem Abschluss des Spiels. Ich war sehr stolz als ich sie endlich hinbekommen habe.*
+*Die `lose()` Funktion war meine zweitletzte Hürde vor dem Abschluss des Spiels. Ich war sehr stolz als ich sie endlich hinbekommen habe.*
 
-Ich habe mich vom flood_fill Code inspirieren lassen, da dieser eine ähnliche Funktion hat. Beim flood_fill werden die anliegenden Felder überprüft und dann wird der Befehl für diese Felder wieder aufgerufen. Man nennt dies eine Rekursion, was bedeutet, dass sie sich selber wieder aufruft. Beim lose brauchen wir dies jedoch nicht. Ich habe mir überlegt, dass das Spiel verloren verloren ist wenn kein einziges Feld den gleichen Wert wie eines seiner vier Anliegenden hat. Damit wusste ich, dass ich einfach bei jedem Feld die 4 Anliegenden anschauen musste und danach überprüfen, ob diese gleich sind. Dies mache ich in diesem Teil des Codes:
+Ich habe mich vom `flood_fill()` Code inspirieren lassen, da dieser eine ähnliche Funktion hat. Beim `flood_fill()` werden die anliegenden Felder überprüft und dann wird der Befehl für diese Felder wieder aufgerufen. Man nennt dies eine Rekursion, was bedeutet, dass sie sich selber wieder aufruft. Beim `lose()`brauchen wir dies jedoch nicht. Ich habe mir überlegt, dass das Spiel verloren verloren ist wenn kein einziges Feld den gleichen Wert wie eines seiner vier Anliegenden hat. Damit wusste ich, dass ich einfach bei jedem Feld die 4 Anliegenden anschauen musste und danach überprüfen, ob diese gleich sind. Dies mache ich in diesem Teil des Codes:
 ```py
  if x!=4: # Ich überprüfe ob x schon 4 ist welches bedeuten würde wir wären schon in der Spalte ganz rechts, welches verursachen würde das der Code abstürzen oder nicht richtig funktionieren würde, falls wir versuchen eine Splate weiter rechts anzuschauen welche es nicht gibt.
         if board[x+1][y]!=board[x][y]: #Hier wird geschaut ob das Feld Rechts von Meinem überprüften den gleichen Wert hat. 
@@ -75,7 +78,7 @@ Ich habe mich vom flood_fill Code inspirieren lassen, da dieser eine ähnliche F
 else: #Wenn x schon 4 ist gibt es rechts davon kein Feld mit welchem man es multiplizieren kann und kann deswegen z+1 rechen.
     z=z+1
 ```
-Dies wiederhole ich dann für alle 4 anliegenden Felder. Wenn nach der überprüfung z=4 ist, bedeutet das, dass dieses Feld nicht mit einem anderen zusammengeführt werden kann.
+Dies wiederhole ich dann für alle 4 anliegenden Felder. Wenn nach der überprüfung `z=4` ist, bedeutet das, dass dieses Feld nicht mit einem anderen zusammengeführt werden kann.
 
 Ich habe mir dann überlegt, dass ich doch zählen könnte wie viele Felder nicht zussammengeführt werden können.
 Wenn dies so ist, rechnet es:
@@ -83,7 +86,7 @@ Wenn dies so ist, rechnet es:
 if z==4:
     a=a+1
 ```
-a ist der Zähler für alle Felder die nicht zusammengeführt werden können. Wir haben in unserem Spiel 25 Felder. Wenn also a=25 ist, bedeutet das, dass kein einziges Feld mit einem anderen zusammengefügt werden kann, und man das Spiel verloren hat.
+`a` ist der Zähler für alle Felder die nicht zusammengeführt werden können. Wir haben in unserem Spiel 25 Felder. Wenn also `a=25` ist, bedeutet das, dass kein einziges Feld mit einem anderen zusammengefügt werden kann, und man das Spiel verloren hat.
 
 ```py
 def lose():
