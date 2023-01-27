@@ -161,7 +161,7 @@ def lose():
     if a==25:
         print (f'Sie haben in {o} Zügen veloren!') # printet die Anzahl Spielzüge aus
         o=0     # resettet den Spielzugzähler
-        Wiederspielen("Wollen Sie noch einmal spielen (ja oder nein)?") #Nachdem man verloren hat kann man eine neue Runde anfangen oder aufhören
+        Wiederspielen("Wollen Sie noch einmal spielen (ja/nein)?") #Nachdem man verloren hat kann man eine neue Runde anfangen oder aufhören
 
 def Wiederspielen(frage):
     global not_game_over
@@ -176,7 +176,7 @@ def Wiederspielen(frage):
         exit(0)
     else:
         print("Falsche Eingabe")
-        Wiederspielen("Wollen Sie noch einmal spielen (ja oder nein)?")
+        Wiederspielen("Wollen Sie noch einmal spielen (ja/nein)?")
 
 def Spielen(frage):
     loop=input(frage)
