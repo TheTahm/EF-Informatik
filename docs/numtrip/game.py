@@ -82,18 +82,18 @@ def flood_fill(x ,y, old, new):
     flood_fill(x, y-1, old, new)
 
 def fill():
-    x=0
-    y=4
+    y=0
+    x=4
     e=0
     for i in range(5):
-        if x >= 5:
+        if y >= 5:
             return
         for i in range(5):
-            if (board[y][x]) == ' ':
+            if (board[x][y]) == ' ':
                 e = e+1
-            y = y-1
-        x = x+1
-        y = 4
+            x = x-1
+        y = y+1
+        x = 4
     return e
 
 def Verdoppelung(Feld):
@@ -103,23 +103,23 @@ def Verdoppelung(Feld):
         board[Zauswahl][Sauswahl] = Wert
 
 def Auffüllen():
-    x=0
-    y=4
+    y=0
+    x=4
     for i in range(25):
-        if x>=5:
-            x=0
+        if y>=5:
+            y=0
         Zeilen=4
         for i in range (4):
-            if (board[y][x])==' ':
-                y=y-1
-                board[Zeilen][x]=board[y][x]
-                board[y][x]=' '
+            if (board[x][y])==' ':
+                x=x-1
+                board[Zeilen][y]=board[x][y]
+                board[x][y]=' '
             Zeilen=Zeilen-1
-            y=Zeilen
-        if board[y][x]==' ':
-            board[y][x] = random.choice(numbers)
-        x=x+1
-        y=4
+            x=Zeilen
+        if board[x][y]==' ':
+            board[x][y] = random.choice(numbers)
+        y=y+1
+        x=4
 
 def win():
     global o
