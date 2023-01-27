@@ -81,35 +81,39 @@ def flood_fill(x ,y, old, new):
     flood_fill(x, y+1, old, new)
     flood_fill(x, y-1, old, new)
 
-def fill(c, d, e):
-    global Feld
+def fill():
+    x=0
+    y=4
+    e=0
     for i in range(5):
-        if d >= 5:
+        if x >= 5:
             return
         for i in range(5):
-            if (board[c][d]) == ' ':
+            if (board[y][x]) == ' ':
                 e = e+1
-                Feld = e
-            c = c-1
-        d = d+1
-        c = 4
+            y = y-1
+        x = x+1
+        y = 4
+    return e
 
-def Auffüllen(a,b):
+def Auffüllen():
+    x=0
+    y=4
     for i in range(25):
-        if b>=5:
-            b=0
+        if x>=5:
+            x=0
         Zeilen=4
         for i in range (4):
-            if (board[a][b])==' ':
-                a=a-1
-                board[Zeilen][b]=board[a][b]
-                board[a][b]=' '
+            if (board[y][x])==' ':
+                y=y-1
+                board[Zeilen][x]=board[y][x]
+                board[y][x]=' '
             Zeilen=Zeilen-1
-            a=Zeilen
-        if board[a][b]==' ':
-            board[a][b] = random.choice(numbers)
-        b=b+1
-        a=4
+            y=Zeilen
+        if board[y][x]==' ':
+            board[y][x] = random.choice(numbers)
+        x=x+1
+        y=4
 
 def win():
     global o
@@ -181,13 +185,12 @@ while not_game_over:
     flood_fill(Zauswahl,Sauswahl,board[Zauswahl][Sauswahl],' ')
     Spalte=0
     Zeile=4
-    Feld=0
-    fill(Zeile,Spalte,Feld)
+    Feld=fill()
     if Feld > 1:
         board[Zauswahl][Sauswahl] = Wert*2
     else:
         board[Zauswahl][Sauswahl] = Wert
-    Auffüllen(Zeile,Spalte)
+    Auffüllen()
     spielfeld()
     win()
     lose()
