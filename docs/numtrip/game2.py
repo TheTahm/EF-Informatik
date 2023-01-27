@@ -99,7 +99,7 @@ def Auffüllen(a,b):
         if b>=5:
             b=0
         Zeilen=4
-        for i in range (5):
+        for i in range (4):
             if (board[a][b])==' ':
                 a=a-1
                 board[Zeilen][b]=board[a][b]
