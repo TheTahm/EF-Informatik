@@ -1,10 +1,10 @@
 # Ziel des Spiels
 
-Numtrip ist ein Denkspiel bei dem das Ziel ist Zahlen zu kombinieren bis man auf 128 kommt. Dies erfolgt in dem man auf dem Spielfeld einen Punkt ausswählt. Falls der Wert an diesem Punkt mit mindestens einem der anliegenden Feldern übereinstimmt, werden diese zussammen genommen und der Originalwert wird verdoppelt.
+Numtrip ist ein Denkspiel, mit dem Ziel Zahlen zu kombinieren, bis man die Zahl 128 erreicht. Dies erfolgt, in dem man auf dem Spielfeld einen bestimmten Punkt auswählen kann. Falls der Wert an diesem Punkt mit mindestens einem der anliegenden Feldern übereinstimmt, werden diese zussammen genommen und der Originalwert wird verdoppelt.
 
 # Die grösste Herausforderung
 
-Mein persönliches Problem waren meine Python kenntnisse. Ich konnte meine Ideen nicht umsetzten. Ich konnte mir vorstellen wie etwas funktioniert, jedoch hatte ich leider nicht die Syntax Kenntisse um diese dann durch zu setzten. Die grösste Herausvorderung war für mich am Anfang. Von Tygerjython auf Python zu wechseln, ist ein grosser Sprung und mir fehlten so viele Begriffe. Ich konnte anfangs keinen Code schreiben ohne, dass etwas an der Syntax nicht stimmte. Mit der Zeit jedoch geling mir dies immer wie einfacher und ich entwikelte in der letzten Woche des Projekts sogar freude beim Programmieren.
+Mein persönliches Problem waren meine Pythonkenntnisse, weshalb ich viele meiner Ideen nicht umsetzen konnte. Ich konnte mir vorstellen wie etwas funktioniert, jedoch hatte ich leider nicht die Syntax Kenntisse um meine Einfälle schliesslich durchzusetzten. Die grösste Herausvorderung für mich war der Anfang. Von Tygerjython auf Python zu wechseln war ein grosser Sprung und mir fehlten sehr viele Begriffe. Mit der Zeit jedoch wurde das Programmieren etwas einfacker und ich entwikelte in der letzten Woche des Projekts sogar Freude am Programmieren.
 
 *Ich habe z.B am Anfang des Projekts über 2 Sunden gebraucht um die Eingabenüberprüfung zu schreiben.*
 ```py
@@ -29,7 +29,7 @@ def Feldauswahl():
             print ("Das ist keine Zahl")
         return False
 ```
-*Mittlerweile kann ich eine einfachere und besser verstäntliche in unter 10 min coden.*
+*Mittlerweile kann ich eine einfachere und besser verständliche in unter 10 min coden.*
 ```py
 def Süberprüfen(frage):
     valid=True
@@ -49,9 +49,9 @@ def Süberprüfen(frage):
 
 Man muss sich das Programm Visual Studio Code herunterladen.
 
-Direkter Link zu Webseite zum downloaden: https://code.visualstudio.com/
+Direkter Link zur Webseite für den Download: https://code.visualstudio.com/
 
-Dann muss man nur noch auf Github meinen Code kopieren gehen und au Visual Studio Code einfügen einfügen.
+Dann muss man nur noch auf Github meinen Code kopieren und ihn auf Visual Studio Code einfügen.
 
 Direkter Link zu meinem Numtrip Code auf Github:
 https://github.com/TheTahm/EF-Informatik/blob/main/docs/numtrip/game2.py
@@ -65,9 +65,9 @@ https://github.com/TheTahm/EF-Informatik/blob/main/docs/numtrip/game2.py
 
 ## Meine lose Definition:
 
-*Die lose Funktion war meine 2. letzte Hürde vor dem Abschluss des Spiels. Ich war sehr stolz als ich es endlich hinbekommen habe.*
+*Die lose Funktion war meine zweitletzte Hürde vor dem Abschluss des Spiels. Ich war sehr stolz als ich sie endlich hinbekommen habe.*
 
-Ich habe mich am flood_fill code Inspirieren lassen, da wir etwas ähnliches machen. Beim flood_fill werden die anligenden Felder überprüft und dann wird der Befehl für diese Felder wieder aufgerufen. Man nennt dies eine Rekursion, bedeutet die Definition, ruft sich selber wieder auf. Beim lose brauchen wir dies jedoch nciht. Ich habe mir überlegt, dass Spiel ist verloren wenn: kein einziges Feld den gleichen Wert mehr hat wie eines der vier anligenden. Damit wusste ich, dass ich einfach bei jedem Feld die 4 anligenden anschauen muss und überprüfen, ob diese gleich sind. Dies mache ich in diesem Teil des Codes:
+Ich habe mich vom flood_fill Code inspirieren lassen, da dieser eine ähnliche Funktion hat. Beim flood_fill werden die anliegenden Felder überprüft und dann wird der Befehl für diese Felder wieder aufgerufen. Man nennt dies eine Rekursion, was bedeutet, dass sie sich selber wieder aufruft. Beim lose brauchen wir dies jedoch nicht. Ich habe mir überlegt, dass das Spiel verloren verloren ist wenn kein einziges Feld den gleichen Wert wie eines seiner vier Anliegenden hat. Damit wusste ich, dass ich einfach bei jedem Feld die 4 Anliegenden anschauen musste und danach überprüfen, ob diese gleich sind. Dies mache ich in diesem Teil des Codes:
 ```py
  if x!=4: # Ich überprüfe ob x schon 4 ist welches bedeuten würde wir wären schon in der Spalte ganz rechts, welches verursachen würde das der Code abstürzen oder nicht richtig funktionieren würde, falls wir versuchen eine Splate weiter rechts anzuschauen welche es nicht gibt.
         if board[x+1][y]!=board[x][y]: #Hier wird geschaut ob das Feld Rechts von Meinem überprüften den gleichen Wert hat. 
