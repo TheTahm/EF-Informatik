@@ -73,7 +73,7 @@ https://github.com/TheTahm/EF-Informatik/blob/main/docs/numtrip/game2.py
 Ich habe mich vom `flood_fill()` Code inspirieren lassen, da dieser eine ähnliche Funktion hat. Beim `flood_fill()` werden die anliegenden Felder überprüft und dann wird der Befehl für diese Felder wieder aufgerufen. Man nennt dies eine Rekursion, was bedeutet, dass sie sich selber wieder aufruft. Beim `lose()`brauchen wir dies jedoch nicht. Ich habe mir überlegt, dass das Spiel verloren verloren ist wenn kein einziges Feld den gleichen Wert wie eines seiner vier Anliegenden hat. Damit wusste ich, dass ich einfach bei jedem Feld die 4 Anliegenden anschauen musste und danach überprüfen, ob diese gleich sind. Dies mache ich in diesem Teil des Codes:
 ```py
  if x!=4: # Ich überprüfe ob x schon 4 ist welches bedeuten würde wir wären schon in der Spalte ganz rechts, welches verursachen würde das der Code abstürzen oder nicht richtig funktionieren würde, falls wir versuchen eine Splate weiter rechts anzuschauen welche es nicht gibt.
-        if board[x+1][y]!=board[x][y]: #Hier wird geschaut ob das Feld Rechts von Meinem überprüften den gleichen Wert hat. 
+        if board[x+1][y]!=board[x][y]: #Hier wird geschaut ob das Feld unter Meinem den gleichen Wert hat. 
             z=z+1 # Der Code rechnet jedes Mal z+1 wenn man ein anliegendes Feld hat welcher nicht den gleichen Wert hat.
 else: #Wenn x schon 4 ist gibt es rechts davon kein Feld mit welchem man es multiplizieren kann und kann deswegen z+1 rechen.
     z=z+1
@@ -96,22 +96,22 @@ def lose():
         for x in range(5): # x ist die Spaltenzahl
             z=0         #z muss bei jedem neuen Feld 0 gesetzt werden
             if x!=4:
-                if board[x+1][y]!=board[x][y]:     #Überprüft das Feld rechts davon
-                    z=z+1
+                if board[x+1][y]!=board[x][y]:     #Überprüft das Feld darunter
+                    z=z+1                           
             else:
                 z=z+1
             if x!=0:
-                if board[x-1][y]!=board[x][y]:     #Überprüft das Feld links davon
+                if board[x-1][y]!=board[x][y]:     #Überprüft das Feld darüber
                     z=z+1
             else:
                 z=z+1
             if y!=4:
-                if board[x][y+1]!=board[x][y]:     #Überprüft das Feld darunter
+                if board[x][y+1]!=board[x][y]:     #Überprüft das Feld rechts davon
                     z=z+1
             else:
                 z=z+1
             if y!=0:
-                if board[x][y-1]!=board[x][y]:     #Überprüft das Feld darüber
+                if board[x][y-1]!=board[x][y]:     #Überprüft das Feld links davon
                     z=z+1
             else:
                 z=z+1
@@ -120,7 +120,7 @@ def lose():
     if a==25:
         print (f'Sie haben in {o} Zügen veloren!') # printet die Anzahl Spielzüge aus
         o=0     # resettet den Spielzugzähler
-        Wiederspielen("Wollen Sie noch einmal spielen (ja oder nein)?") #Nachdem man verloren hat kann man eine neue Runde anfangen oder aufhören
+        Wiederspielen("Wollen Sie noch einmal spielen (ja/nein)?") #Nachdem man verloren hat kann man eine neue Runde anfangen oder aufhören
 ```
 
 
