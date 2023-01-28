@@ -204,5 +204,3 @@ while not_game_over:
     spielfeld() # Zeigt das neue Spielfeld an
     win() # überprüft ob man gewonnen hat, falls ja auch ob man noch einmal spielen will
     lose()  # überprüft ob man verloren hat, falls ja auch ob man noch einmal spielen will
-
-exit(0)
