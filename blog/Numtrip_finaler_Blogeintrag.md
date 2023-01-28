@@ -3,7 +3,7 @@
 
 # Ziel des Spiels
 
-Numtrip ist ein Denkspiel, mit dem Ziel Zahlen zu kombinieren, bis man die Zahl 128 erreicht. Dies erfolgt, in dem man auf dem Spielfeld einen bestimmten Punkt auswählen kann. Falls der Wert an diesem Punkt mit mindestens einem der anliegenden Feldern übereinstimmt, werden diese zussammen genommen und der Originalwert wird verdoppelt.
+Numtrip ist ein Denkspiel, mit dem Ziel Zahlen zu kombinieren, bis man die Zahl 128 erreicht. Dies erfolgt, in dem man auf dem Spielfeld einen bestimmten Punkt auswählen kann. Falls der Wert an diesem Punkt mit mindestens einem der anliegenden Feldern übereinstimmt, werden diese zusammengenommen und der Originalwert wird verdoppelt.
 
 # Die grösste Herausforderung
 
@@ -41,7 +41,7 @@ def Süberprüfen(frage):
             zahl=input(frage)
             zahl = int(zahl)
             zahl = zahl -1
-            if zahl<0 or zahl > 4:   #Warum Funktioniert 5 als Zahl bei <5?
+            if zahl<0 or zahl > 4:
                 raise
             return zahl
         except:
@@ -54,7 +54,7 @@ Man muss sich das Programm Visual Studio Code herunterladen.
 
 Direkter Link zur Webseite für den Download: https://code.visualstudio.com/
 
-Dann muss man nur noch auf Github meinen Code kopieren und ihn auf Visual Studio Code einfügen.
+Dann muss man nur noch auf Github meinen Code kopieren und ihn in Visual Studio Code einfügen.
 
 Direkter Link zu meinem Numtrip Code auf Github:
 https://github.com/TheTahm/EF-Informatik/blob/main/docs/numtrip/game2.py
@@ -94,7 +94,7 @@ def lose():
     a=0
     for y in range(5): # y ist die Zeilenzahl
         for x in range(5): # x ist die Spaltenzahl
-            z=0         #z muss bei jedem neuen Feld 0 gesetzt werden
+            z=0         # z muss bei jedem neuen Feld 0 gesetzt werden
             if x!=4:
                 if board[x+1][y]!=board[x][y]:     #Überprüft das Feld darunter
                     z=z+1                           
@@ -118,9 +118,9 @@ def lose():
             if z==4:
                 a=a+1
     if a==25:
-        print (f'Sie haben in {o} Zügen veloren!') # printet die Anzahl Spielzüge aus
+        print (f'Sie haben in {o} Zügen veloren!') # printet die Anzahl Spielzüge
         o=0     # resettet den Spielzugzähler
-        Wiederspielen("Wollen Sie noch einmal spielen (ja/nein)?") #Nachdem man verloren hat kann man eine neue Runde anfangen oder aufhören
+        Wiederspielen("Wollen Sie noch einmal spielen (ja/nein)?") # Nachdem man verloren hat, kann man eine neue Runde anfangen oder aufhören
 ```
 
 
