@@ -72,21 +72,21 @@ https://github.com/TheTahm/EF-Informatik/blob/main/docs/numtrip/game2.py
 
 Ich habe mich vom `flood_fill()` Code inspirieren lassen, da dieser eine ähnliche Funktion hat. Beim `flood_fill()` werden die anliegenden Felder überprüft und dann wird der Befehl für diese Felder wieder aufgerufen. Man nennt dies eine Rekursion, was bedeutet, dass sie sich selber wieder aufruft. Beim `lose()`brauchen wir dies jedoch nicht. Ich habe mir überlegt, dass das Spiel verloren verloren ist wenn kein einziges Feld den gleichen Wert wie eines seiner vier Anliegenden hat. Damit wusste ich, dass ich einfach bei jedem Feld die 4 Anliegenden anschauen musste und danach überprüfen, ob diese gleich sind. Dies mache ich in diesem Teil des Codes:
 ```py
- if x!=4: # Ich überprüfe ob x schon 4 ist welches bedeuten würde wir wären schon in der Spalte ganz rechts, welches verursachen würde das der Code abstürzen oder nicht richtig funktionieren würde, falls wir versuchen eine Splate weiter rechts anzuschauen welche es nicht gibt.
-        if board[x+1][y]!=board[x][y]: #Hier wird geschaut ob das Feld unter Meinem den gleichen Wert hat. 
-            z=z+1 # Der Code rechnet jedes Mal z+1 wenn man ein anliegendes Feld hat welcher nicht den gleichen Wert hat.
-else: #Wenn x schon 4 ist gibt es rechts davon kein Feld mit welchem man es multiplizieren kann und kann deswegen z+1 rechen.
+ if x!=4: # Ich überprüfe ob x schon 4 ist, was bedeuten würde, dass wir schon in der Spalte ganz rechts wären. Dies führt dazu, dass der Code abstürzt oder nicht richtig funktioniert, da wir versuchen eine Spalte weiter rechts anzuschauen, die es nicht gibt.
+        if board[x+1][y]!=board[x][y]: # Hier wird überprüft, ob das Feld unter dem Ausgewählten den gleichen Wert hat. 
+            z=z+1 # Der Code rechnet jedes Mal z+1 wenn das anliegende Feld nicht den gleichen Wert hat.
+else: # Wenn x schon 4 ist, gibt es rechts davon kein Feld mit dem man es multiplizieren kann, deswegen kann man z+1 rechnen.
     z=z+1
 ```
-Dies wiederhole ich dann für alle 4 anliegenden Felder. Wenn nach der überprüfung `z=4` ist, bedeutet das, dass dieses Feld nicht mit einem anderen zusammengeführt werden kann.
+Dies wiederhole ich dann für alle 4 anliegenden Felder. Wenn nach der Überprüfung `z=4` ist, bedeutet das, dass dieses Feld nicht mit einem anderen zusammengeführt werden kann.
 
-Ich habe mir dann überlegt, dass ich doch zählen könnte wie viele Felder nicht zussammengeführt werden können.
-Wenn dies so ist, rechnet es:
+Ich habe mir dann überlegt, dass ich zählen könnte, wie viele Felder nicht zusammengeführt werden können.
+Wenn z=4 ist, rechnet es:
 ```py
 if z==4:
     a=a+1
 ```
-`a` ist der Zähler für alle Felder die nicht zusammengeführt werden können. Wir haben in unserem Spiel 25 Felder. Wenn also `a=25` ist, bedeutet das, dass kein einziges Feld mit einem anderen zusammengefügt werden kann, und man das Spiel verloren hat.
+`a` ist der Zähler für alle Felder die nicht zusammengeführt werden können. Wir haben in unserem Spiel 25 Felder. Wenn also `a=25` ist bedeutet das, dass kein einziges Feld mit einem anderen zusammengefügt werden kann und man das Spiel verloren hat.
 
 ```py
 def lose():
@@ -126,4 +126,4 @@ def lose():
 
 
 # Empfehlung an andere EF Schüler:innen
-Fangt früh genug an! Das abgabe Datum kommt schneller als gedacht. Vorallem mit den Weinachtsferien kurz vor der Abgabe vergisst man es gerne und glaubt mir, ich rede aus Erfahrung. Es ist viel schöner Programmieren zu können wenn man dazu Motiviet ist und nicht die ganze Zeit stress hat. Ich musste nämlich von einem fehlerhaften code der die Felder leeren kann in eienr Woche zum fertig Spiel programmieren. **Meine wichtigste Erkenntnis, ist jedoch, probiert aus und schrekt nicht zurück. Ich habe lange Zeit Angst gehabt weiter zu arbeiten, weil ich kaum die Sachen im Unterricht hinbekommen habe. Jetzt musste ich mich aber ein paar Stunden hinsetzen und programmieren und dieses Mal konnte ich es nicht einfach auschieben. Ich war erstaunt wie viel ich hinbekommen habe und wie viel ich dazu gelernt habe. Was mir sehr geholfen hat, war es jedes Problem in die kleinstne einzelteile zu zerkleiren und jedes Problem mit einfachen Commands zu lösen und dann zusammen zu setzen.Mein code ist villeicht nicht der schönste oder der effizientiste, jedoch funktioniert er.**
+Fangt früh genug an! Das Abgabedatum kommt schneller als gedacht. Vor allem mit den Weinachtsferien kurz vor der Abgabe vergisst man es gerne. Glaubt mir, ich rede aus Erfahrung. Es ist viel schöner programmieren zu können, wenn man dazu motiviert ist und sich nicht die ganze unter Stress gesetzt fühlt. Ich musste nämlich einen fehlerhaften Code, welcher die Felder leeren kann in einer Woche zu einem fertigen Spiel programmieren. **Meine wichtigste Erkenntnis ist jedoch, dass ihr ausprobieren und nicht zurückschrecken sollt. Ich hatte lange Zeit Angst weiter zu arbeiten, weil ich kaum die Aufträge im Unterricht fertigstellen konnte. Jetzt musste ich mich aber ein paar Stunden hinsetzen und programmieren und dieses Mal konnte ich es nicht einfach aufschieben. Ich war erstaunt, wie viel ich geschafft habe und wie viel ich dazu gelernt habe. Was mir sehr geholfen hat, war jedes Problem in seine Einzelteile zu zerkleinern und jedes Problem mit einfachen Commands zu lösen und dann zusammenzusetzen.Mein Code ist vielleicht nicht der schönste oder der effizienteste, jedoch funktioniert er.**
