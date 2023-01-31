@@ -187,7 +187,7 @@ def Spielen(frage): # ist dazu da um zu entscheiden ob man spielen will, funktio
         exit(0)
     else:
         print("Falsche Eingabe")
-        Spielen("Wollen Sie noch einmal spielen (ja/nein)?")
+        Spielen("Wollen Sie Spielen?(ja/nein)")
 
 Spielen("Wollen Sie Spielen?(ja/nein)") # fragt ob man spielen will
 not_game_over=True  # solange, dass dies True ist, wird das Spiel weitergespielt
