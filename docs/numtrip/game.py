@@ -1,17 +1,13 @@
 import random
-
 numbers = [2, 4, 8]
 board = []
+for i in range(5):
+    neuezeile=[]
+    for j in range(5):
+        neuezeile.append(2**(int(random.random()*10)))
+    board.append(neuezeile)
 
-def board_auffüllen():
-    global board
-    board = [     # Füllt das Board mit zufälligen Werten  Werte=(2,4,8)  
-        [random.choice(numbers),random.choice(numbers), random.choice(numbers), random.choice(numbers), random.choice(numbers)],
-        [random.choice(numbers),random.choice(numbers), random.choice(numbers), random.choice(numbers), random.choice(numbers)],
-        [random.choice(numbers),random.choice(numbers), random.choice(numbers), random.choice(numbers), random.choice(numbers)],
-        [random.choice(numbers),random.choice(numbers), random.choice(numbers), random.choice(numbers), random.choice(numbers)],
-        [random.choice(numbers),random.choice(numbers), random.choice(numbers), random.choice(numbers), random.choice(numbers)]
-    ]
+# das ist gschider weil es viel kürzer ist und die gleiche funktion hat
 
 def spielfeld():    # Druckt das Spielfeld aus
     #Zahlen oben = x
