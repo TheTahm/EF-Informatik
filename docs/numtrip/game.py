@@ -44,7 +44,7 @@ def spielfeld():    # Druckt das Spielfeld aus
         print(' ---', end='')
     print(' ')
 
-def Süberprüfen(frage): # überprüft die Spaltenauswahl
+def überprüfen(frage): # überprüft die Spaltenauswahl
     valid=True
     while valid:        # Wiederholt es bis eine richtige Eingabe geschiet
         try:
@@ -57,18 +57,7 @@ def Süberprüfen(frage): # überprüft die Spaltenauswahl
         except:
             print ('Fehlerhafte Eingabe')      # Es wird automatisch wiederholt
 
-def Züberprüfen(frage): # überprüft die Zeilenauswahl
-    valid=True
-    while valid:
-        try:
-            zahl=input(frage)
-            zahl = int(zahl)
-            zahl = zahl -1
-            if zahl<0 or zahl > 4: # Bei kleiner als 0 zählt 0 nicht dazu
-                raise 
-            return zahl
-        except:
-            print ('Fehlerhafte Eingabe')
+
 
 def flood_fill(x ,y, old, new): # leert alle anliegenden Felder mit dem Glecihen Wert vom Ausgwehälten
     if x < 0 or x >= len(board[0]) or y < 0 or y >= len(board): # schaut ob das Feld noch im Spielfeld ist
@@ -174,29 +163,18 @@ def Wiederspielen(frage):   # Ermöglicht es eine neue Runde anzufangen oder auf
         exit(0) 
     else:           # falls die Eingabe falsch ist, wird sie erneut abgefragt
         print("Falsche Eingabe")
-        Wiederspielen("Wollen Sie noch einmal spielen (ja/nein)?")
+        Wiederspielen(frage)
 
-def Spielen(frage): # ist dazu da um zu entscheiden ob man spielen will, funktioniert gleich wie Wiederspielen, einfach dass die durchgegebene Frage anders ist
-    loop=input(frage)
-    loop=loop.lower()
-    loop=loop.strip()
-    if loop=="ja":
-        board_auffüllen()
-        spielfeld()
-    elif loop=="nein":
-        exit(0)
-    else:
-        print("Falsche Eingabe")
-        Spielen("Wollen Sie Spielen?(ja/nein)")
 
-Spielen("Wollen Sie Spielen?(ja/nein)") # fragt ob man spielen will
-not_game_over=True  # solange, dass dies True ist, wird das Spiel weitergespielt
+
+Wiederspielen("Wollen Sie Spielen?(ja/nein)") # fragt ob man spielen will
+game_over=False  # solange, dass dies True ist, wird das Spiel weitergespielt
 o=0 # definiert den Spielzugzähler
-while not_game_over:
+while not game_over:
     o=o+1 # der Spielzugzähler, wird nach jedem zyklus +1 gerechnet 
     print (f'Spielzug {o}') # Gibt die Anzahl Spielzüge an, die man schon gepsielt hat
-    Zauswahl=Züberprüfen("Welche Zeile 1-5?") # Zauswahl, ist die überprüfte Zahl der eingabe des Benutzers für die Zeile
-    Sauswahl=Süberprüfen("Welche Spalte 1-5?") # Sauswahl, für die Spalten
+    Zauswahl=überprüfen("Welche Zeile 1-5?") # Zauswahl, ist die überprüfte Zahl der eingabe des Benutzers für die Zeile
+    Sauswahl=überprüfen("Welche Spalte 1-5?") # Sauswahl, für die Spalten
     Wert=board[Zauswahl][Sauswahl] # kopiert den Wert des ausgewählten Feldes, befor es gelöscht wird
     flood_fill(Zauswahl,Sauswahl,board[Zauswahl][Sauswahl],' ') # leert anligende Felder mit dem gleichen Wert
     Verdoppelung(fill()) # Verdoppelt den original Wert
