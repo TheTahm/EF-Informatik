@@ -1,11 +1,12 @@
 import random
 numbers = [2, 4, 8]
 board = []
-for i in range(5):
-    neuezeile=[]
-    for j in range(5):
-        neuezeile.append(2**(int(random.random()*10)))
-    board.append(neuezeile)
+def board_auffüllen():
+    for i in range(5):
+        neuezeile=[]
+        for j in range(5):
+            neuezeile.append(random.number())
+        board.append(neuezeile)
 
 # das ist gschider weil es viel kürzer ist und die gleiche funktion hat
 
