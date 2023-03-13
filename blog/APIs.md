@@ -9,8 +9,8 @@ Delete- Fragt den Server etwas zu löschen.
 APIs können für eine Vielzahl von Zwecken verwendet werden, z. B. für den Zugriff auf Daten von einem Remote-Server, für welche wir sie auch in unserem Node-RED benutzt haben. Wir haben hierfür eine eigene API erstellt, die auf unseren Server zugreift, welcher es ermöglicht automatisch Worte in Emojis um zu wandeln.
 
 Um unsere API zu erstellen mussten wir zuerst unseren Server erstellen, welcher dann anschliessen dank unserer API von der Get Methode von einem anderen Server angefragt werden konnte. 
-Dies sah dann so aus.
-![](Blog_images\Node-RED-API.png)
+Dies sah dann so aus:
+![](Blog_images\node-red.png)
 
 Von einem anderen Server (in unserem Falle Postman) konnte anschliessend eine text Anfrage geschickt werden.
 
