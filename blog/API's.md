@@ -10,7 +10,7 @@ APIs können für eine Vielzahl von Zwecken verwendet werden, z. B. für den Zug
 
 Um unsere API zu erstellen mussten wir zuerst unseren Server erstellen, welcher dann anschliessen dank unserer API von der Get Methode von einem anderen Server angefragt werden konnte. 
 Dies sah dann so aus.
-![](Blog_images\Node-red-API.png)
+![](Blog_images\Node-RED-API.png)
 
 Von einem anderen Server (in unserem Falle Postman) konnte anschliessend eine text Anfrage geschickt werden.
 
