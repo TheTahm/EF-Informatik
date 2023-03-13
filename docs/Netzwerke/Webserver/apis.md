@@ -29,7 +29,7 @@ Body
 The request body contains the data the client wants to send the server.
 ```
 
-HTTPS responds are similar to request simply instead of a url and a method it has "Status Codes"
+HTTPS das s steht für secure. Bedeutet die Nachricht ist verschlüsselt
 
 
 JSON (JavaScript Object Notation) aer the most used Format for APIs
