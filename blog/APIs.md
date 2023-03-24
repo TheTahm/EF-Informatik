@@ -42,4 +42,4 @@ i)Cookies sind kleine Textdateien, die Websites auf dem Computer oder Mobilgerä
 
 ii)Dies benutzen wir dann fürs login. Wenn sich beispielsweise ein Benutzer bei einer Website anmeldet und diese dann verlässt und später wieder zurückkehrt, kann die Website Cookies verwenden, um sich die Anmeldedaten zu merken, damit man sich nicht erneut anmelden muss.
 
-iii)
+iii) Wir vertrauen den Cookies blind und überprüfen nicht ob ihr Inhalt wahr ist. Somit könnte jeder ein Cookie erstellen und sagen das er Zugang hat und uns hacken.
