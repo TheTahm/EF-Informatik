@@ -61,3 +61,6 @@ Learning means having an IP ADress in the attached Network
 Gateway Weg um aus dem Lokalen Netzwerk zu kommen.
 Routin= movin data between networks
 
+Das Schulhausnetzwerk ist ein LAN
+
+Das Telefonnetzwerk ist ein WAN
