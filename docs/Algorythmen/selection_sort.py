@@ -1,3 +1,7 @@
+from timeit import timeit
+from copy import deepcopy
+from random import shuffle
+
 def selection_sort(a):
     for j in range(len(a) - 1):
         key = a[j]
@@ -9,6 +13,11 @@ def selection_sort(a):
         a[index] = key
     return a
 
-to_sort = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+to_sort = list(range(100000))
+shuffle(to_sort)
+
 print('Unsortiert:', to_sort)
 print('Sortiert:  ', selection_sort(to_sort))
+
+execution_time = timeit(lambda: selection_sort(deepcopy(to_sort)), number=1)
+print('Zeit für 100x Sortieren:', execution_time/1)
