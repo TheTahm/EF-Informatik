@@ -6,6 +6,11 @@ def fak(n):
     
 number= 5
 
+def factorial(n):
+    if n==0:
+        return 1
+    
+
 
 fak(number)
     

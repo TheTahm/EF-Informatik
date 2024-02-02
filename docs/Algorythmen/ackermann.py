@@ -12,3 +12,6 @@ def ack(m,n):
 m=random.randint(1,4)
 n=random.randint(1,4)
 print (m, n, ack(m,n))
+# Benötigt einen Stack, damit in jedem Frame separate Variablen speicherbar sind. Limit der Rekursionstiefe auf 1000
+# import sys
+# sys.setrecursionlimit(999999)
